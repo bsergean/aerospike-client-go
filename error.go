@@ -434,7 +434,7 @@ var (
 	ErrInvalidPartitionMap             = newConstError(types.INVALID_CLUSTER_PARTITION_MAP, "Partition map errors normally occur when the cluster has partitioned due to network anomaly or node crash, or is not configured properly. Refer to https://www.aerospike.com/docs/operations/configure for more information.")
 	ErrKeyNotFound                     = newConstError(types.KEY_NOT_FOUND_ERROR)
 	ErrRecordsetClosed                 = newConstError(types.RECORDSET_CLOSED)
-	ErrConnectionPoolEmpty             = newConstError(types.NO_AVAILABLE_CONNECTIONS_TO_NODE, "connection pool is empty. This happens when no connections were available")
+	ErrConnectionPoolEmpty             = newConstError(types.NO_AVAILABLE_CONNECTIONS_TO_NODE, "connection pool is empty. This happens when no connections were available. client.WarmUp(0) can fill up the connection pool.")
 	ErrConnectionPoolExhausted         = newConstError(types.NO_AVAILABLE_CONNECTIONS_TO_NODE, "Connection pool is exhausted. This happens when all connection are in-use already, and opening more connections is not allowed due to the limits set in policy.ConnectionQueueSize and policy.LimitConnectionsToQueueSize")
 	ErrTooManyConnectionsForNode       = newConstError(types.NO_AVAILABLE_CONNECTIONS_TO_NODE, "connection limit reached for this node. This value is controlled via ClientPolicy.LimitConnectionsToQueueSize")
 	ErrTooManyOpeningConnections       = newConstError(types.NO_AVAILABLE_CONNECTIONS_TO_NODE, "too many connections are trying to open at once. This value is controlled via ClientPolicy.OpeningConnectionThreshold")
